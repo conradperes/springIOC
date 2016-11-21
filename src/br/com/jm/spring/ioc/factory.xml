@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean name="personByFactory" class="br.com.jm.spring.ioc.beans.Person"
+		factory-method="newInstance">
+		<constructor-arg value="Michael Jackson" />
+	</bean>
+	<bean name="personByFactoryInstance" class="br.com.jm.spring.ioc.beans.Person"
+		factory-bean="personFactory" factory-method="newPerson">
+		<property name="name" value="Elvis Presley"/>
+	</bean>
+	<bean name="personFactory"
+		class="br.com.jm.spring.ioc.beans.person.factory.PersonFactory" />
+</beans>

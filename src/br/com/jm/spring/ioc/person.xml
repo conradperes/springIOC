@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean name="person" class="br.com.jm.spring.ioc.beans.Person">
+		<property name="name">
+			<value> Conrad Peres </value>
+		</property>
+		<property name="age">
+			<value> 37 </value>
+		</property>
+		<property name="hobbies">
+			<list>
+				<value> 37 </value>
+				<value> 37 </value>
+				<value> 39 </value>
+				<value> 37 </value>
+				<value> 41 </value>
+				<value> 37 </value>
+				<value> 43 </value>
+			</list>
+		</property>
+		<property name="mapa">
+			<map>
+				<entry key="HEIGHT" value="1.80M" />
+				<entry key="WEIGHT" value="85KG" />
+				<entry key="HEIGHT" value="1.80M" />
+				<entry key="WEIGHT" value="85KG" />
+				<entry key="HEIGHT" value="1.80M" />
+				<entry key="WEIGHT" value="85KG" />
+				<entry key="HEIGHT" value="1.80M" />
+				<entry key="WEIGHT" value="85KG" />
+				<entry key="HEIGHT" value="1.80M" />
+				<entry key="WEIGHT" value="85KG" />
+				<entry key="HEIGHT" value="1.80M" />
+				<entry key="WEIGHT" value="85KG" />
+				<entry key="HEIGHT" value="1.80M" />
+				<entry key="WEIGHT" value="85KG" />
+				<entry key="HEIGHT" value="1.80M" />
+				<entry key="WEIGHT" value="85KG" />
+				<entry key="HEIGHT" value="1.80M" />
+				<entry key="WEIGHT" value="85KG" />
+				<entry key="HEIGHT" value="1.80M" />
+				<entry key="WEIGHT" value="85KG" />
+			</map>
+		</property>
+		<property name="address" ref="address" />
+	</bean>
+	<bean name="address" class="br.com.jm.spring.ioc.beans.Address">
+		<property name="street">
+			<value>Barão de Mesquita</value>
+		</property>
+		<property name="number">
+			<value>815</value>
+		</property>
+		<property name="zip" ref="zip"/>
+		<property name="city" value="São Paulo"/>
+		<property name="state" value="SP"/>
+	</bean>
+	<bean name="zip" class="br.com.jm.spring.ioc.beans.Zip">
+		<constructor-arg value="20540004"/>
+	</bean>
+</beans>
